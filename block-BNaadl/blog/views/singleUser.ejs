@@ -24,8 +24,24 @@
     <a href="/">
       <button>Home</button>
     </a>
-    <button class="increment">increase</button>
-    <button class="decrement">decrease</button>
+    <a href="/blog/<%= blog.id%>/likes">
+      <button>increase</button>
+    </a>
+
+    <form action="/blog/<%= blog.id%>/comments" method="POST">
+      <fieldset>
+        <textarea name="content"></textarea>
+        <input type="submit" value="add" />
+      </fieldset>
+    </form>
+    <%comment.forEach(comment=>{%>
+    <a href="/comment/<%= comment.id%>/edit">
+      <button>edit</button>
+    </a>
+    <a href="/comment/<%= comment.id%>/delete">
+      <button>delete</button>
+    </a>
+    <%})%>
     <script src="../javascripts/like.js"></script>
   </body>
 </html>
