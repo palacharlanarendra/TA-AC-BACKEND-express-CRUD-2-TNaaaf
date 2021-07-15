@@ -11,7 +11,7 @@
     <p><%= blog.description%></p>
     <p><%= blog.author%></p>
     <p><%= blog.tags%></p>
-    <p class="likes"><%= blog.likes%></p>
+    <p><%= blog.likes%></p>
     <a href="/blog/<%= blog.id%>/edit">
       <button>Update info</button>
     </a>
@@ -27,6 +27,9 @@
     <a href="/blog/<%= blog.id%>/likes">
       <button>increase</button>
     </a>
+    <a href="/blog/<%= blog.id%>/dislikes">
+      <button>decrease</button>
+    </a>
 
     <form action="/blog/<%= blog.id%>/comments" method="POST">
       <fieldset>
@@ -35,6 +38,15 @@
       </fieldset>
     </form>
     <%comment.forEach(comment=>{%>
+    <p><%= comment.content%></p>
+    <p><%= comment.likes%></p>
+    <a href="/comment/<%= comment.id%>/likes">
+      <button>like</button>
+    </a>
+    <p><%= comment.dislikes%></p>
+    <a href="/comment/<%= comment.id%>/dislikes">
+      <button>dislike</button>
+    </a>
     <a href="/comment/<%= comment.id%>/edit">
       <button>edit</button>
     </a>

@@ -66,9 +66,18 @@ router.post('/:id/comments', (req, res, next) => {
     res.redirect('/blog/' + id);
   });
 });
-router.get('/:id/likes', (req, res) => {
+router.get('/:id/likes', (req, res, next) => {
   var id = req.params.id;
-  Blog.findByIdAndUpdate(id, { likes: { $inc: 1 } }, (err, blog) => {
+  Blog.findByIdAndUpdate(id, { $inc: { likes: 1 } }, (err, blog) => {
+    console.log(err, blog);
+    if (err) return next(err);
+    res.redirect('/blog/' + id);
+  });
+});
+router.get('/:id/dislikes', (req, res, next) => {
+  var id = req.params.id;
+  Blog.findByIdAndUpdate(id, { $inc: { likes: -1 } }, (err, blog) => {
+    console.log(err, blog);
     if (err) return next(err);
     res.redirect('/blog/' + id);
   });
