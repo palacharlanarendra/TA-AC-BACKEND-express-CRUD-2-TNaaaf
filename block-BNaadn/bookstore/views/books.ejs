@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book list</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Books list</h1>
+    <p>Books List</p>
+    <a href="/books/new">
+      <button>add book</button>
+    </a>
+    <section>
+      <%books.forEach(book=>{%>
+      <div class="book__box">
+        <img src="<%= book.cover_img%>" alt="cover image" />
+        <p><%= book.title%></p>
+        <a href="/books/<%= book.id%>">
+          <button>View More</button>
+        </a>
+      </div>
+      <%})%>
+    </section>
+  </body>
+</html>
