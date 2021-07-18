@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+.book__box {
+  border: 3px solid grey;
+  padding: 1rem;
+  display: inline-block;
+}
+.single__book__box {
+  border: 1px solid grey;
+  padding: 3rem;
+}
