@@ -6,10 +6,17 @@
   </head>
   <body>
     <h1>Books list</h1>
-    <p>Books List</p>
+
     <a href="/books/new">
-      <button>add book</button>
+      <button>Add Book</button>
     </a>
+    <a href="/authors/">
+      <button>Authors List</button>
+    </a>
+    <a href="/categories/motivation">
+      <button>motivation</button>
+    </a>
+
     <section>
       <%books.forEach(book=>{%>
       <div class="book__box">
