@@ -7,6 +7,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books');
+var authorsRouter = require('./routes/authors');
+var categoriesRouter = require('./routes/categories');
 mongoose.connect(
   'mongodb://localhost/library',
   {
@@ -31,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
-
+app.use('/authors', authorsRouter);
+app.use('/categories', categoriesRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

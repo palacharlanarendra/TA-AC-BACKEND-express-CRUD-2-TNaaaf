@@ -15,3 +15,7 @@ a {
   border: 1px solid grey;
   padding: 3rem;
 }
+.book__box img,
+.single__book__box img {
+  width: 15rem;
+}
