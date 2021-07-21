@@ -7,11 +7,12 @@ var Author = require('../models/authors');
 router.get('/', function (req, res, next) {
   // Book.find({})
   //   .populate('authorId')
-  //   .exec((err, books) => {
-  //     console.log(books);
-  //     res.render('authorsList', { books: books });
+  //   .exec((err, authors) => {
+  //     console.log(authors);
+  //     res.render('authorsList', { authors: authors });
   //   });
   Author.find({}).exec((err, authors) => {
+    console.log(authors);
     res.render('authorsList', { authors: authors });
   });
 });
