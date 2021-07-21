@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Single Book</title>
+  </head>
+  <body>
+    <header class="header__section">
+      <section class="container">
+        <div class="flex">
+          <a href="/">
+            <strong>E-LIBRARY</strong>
+          </a>
+          <a href="/books/">
+            <h3>BOOKS</h3>
+          </a>
+        </div>
+      </section>
+    </header>
+    <h3>Book Details</h3>
+    <div class="single__book__box">
+      <img src="<%= books.cover_img%>" alt="cover image" />
+      <h3>Book Title: <%= books.title%></h3>
+      <p>Summary: <%= books.summary%></p>
+      <p>Pages: <%= books.pages%></p>
+      <p>Publication: <%= books.publication%></p>
+      <p>Category: <%= books.category%></p>
+      <p>Author: <%= books.authorId.author_name%></p>
+    </div>
+  </body>
+</html>

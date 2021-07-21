@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <title>New Book</title>
+  </head>
+  <body class="form__body">
+    <header class="header__section">
+      <section class="container">
+        <div class="flex">
+          <a href="/">
+            <strong>E-LIBRARY</strong>
+          </a>
+          <a href="/books/">
+            <h3>BOOKS</h3>
+          </a>
+        </div>
+      </section>
+    </header>
+    <section class="form">
+      <h2>NEW ENTRY</h2>
+      <div class="container">
+        <form method="POST" action="/books/">
+          <fieldset class="fieldset">
+            <input name="title" type="text" placeholder="title" />
+            <input name="summary" type="text" placeholder="summary" />
+            <input name="pages" type="number" placeholder="pages" />
+            <input name="publication" type="text" placeholder="publication" />
+            <input name="cover_img" type="text" placeholder="cover image" />
+            <input name="category" type="text" placeholder="category" />
+            <input name="author_name" type="text" placeholder="author name" />
+            <input name="author_email" type="text" placeholder="author email" />
+            <input
+              name="author_country"
+              type="text"
+              placeholder="author country"
+            />
+            <input class="formBtn" type="submit" value="submit" />
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

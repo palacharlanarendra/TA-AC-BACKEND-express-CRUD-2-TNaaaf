@@ -29,6 +29,20 @@ router.get('/:id', function (req, res, next) {
       res.render('singleBook', { books: books });
     });
 });
+
+router.get('/:id/delete', function (req, res, next) {
+  var id = req.params.id;
+  Book.findByIdAndRemove(id, (err, books) => {
+    console.log(books);
+    Author.findByIdAndUpdate(
+      books.authorId,
+      { $pull: { booksId: books._id } },
+      (err, author) => {
+        res.redirect('/books/');
+      }
+    );
+  });
+});
 router.post('/', function (req, res, next) {
   Author.findOne({ author_email: req.body.author_email }, (err, author) => {
     if (err) return next(err);
