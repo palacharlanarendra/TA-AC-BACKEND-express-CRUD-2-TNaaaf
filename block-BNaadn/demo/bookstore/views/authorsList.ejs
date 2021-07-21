@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Author's List</title>
+  </head>
+  <body>
+    <header class="header__section">
+      <section class="container">
+        <div class="flex">
+          <a href="/">
+            <strong>E-LIBRARY</strong>
+          </a>
+          <a href="/books/">
+            <h3>BOOKS</h3>
+          </a>
+        </div>
+      </section>
+    </header>
+    <main class="main">
+      <section class="template">
+        <h2>Author's List</h2>
+        <%authors.forEach(author=>{%>
+        <a href="/authors/<%= author.id%>">
+          <h3><%= author.author_name%></h3>
+        </a>
+        <%})%>
+      </section>
+    </main>
+  </body>
+</html>

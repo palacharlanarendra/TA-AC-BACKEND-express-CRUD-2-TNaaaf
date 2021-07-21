@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>fiction</title>
+  </head>
+  <body>
+    <header class="header__section">
+      <section class="container">
+        <div class="flex">
+          <a href="/">
+            <strong>E-LIBRARY</strong>
+          </a>
+          <a href="/books/">
+            <h3>BOOKS</h3>
+          </a>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="books">
+        <%book.forEach(book=>{%>
+        <div class="book__box">
+          <img src="<%= book.cover_img%>" alt="cover image" />
+          <p><%= book.title%></p>
+
+          <a href="/books/<%= book.id%>">
+            <button type="button" class="btn btn-success">View More</button>
+          </a>
+          <a href="/books/<%= book.id%>/delete">
+            <button type="button" class="btn btn-info">Delete</button>
+          </a>
+        </div>
+        <%})%>
+      </section>
+    </main>
+  </body>
+</html>

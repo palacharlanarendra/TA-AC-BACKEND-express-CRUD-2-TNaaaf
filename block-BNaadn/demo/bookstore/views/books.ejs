@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Book list</title>
+  </head>
+  <body>
+    <header class="header__section">
+      <section class="container">
+        <div class="flex">
+          <a href="/">
+            <strong>E-LIBRARY</strong>
+          </a>
+          <a href="/books/">
+            <h3>BOOKS</h3>
+          </a>
+        </div>
+      </section>
+    </header>
+    <main class="books__main">
+      <h3>Books list</h3>
+
+      <section class="bookList">
+        <a href="/books/new">
+          <button type="button" class="btn btn-info">Add Book</button>
+        </a>
+        <a href="/authors/">
+          <button type="button" class="btn btn-primary">Authors List</button>
+        </a>
+      </section>
+      <section class="categories">
+        <a href="/categories/motivation">
+          <button type="button" class="btn btn-primary">MOTIVATION</button>
+        </a>
+        <a href="/categories/fiction">
+          <button type="button" class="btn btn-success">Fiction</button>
+        </a>
+        <a href="/categories/technology">
+          <button type="button" class="btn btn-info">TECHNOLOGY</button>
+        </a>
+        <a href="/categories/adventure">
+          <button type="button" class="btn btn-warning">ADVENTURE</button>
+        </a>
+      </section>
+
+      <section class="books">
+        <%books.forEach(book=>{%>
+        <div class="book__box">
+          <img src="<%= book.cover_img%>" alt="cover image" />
+          <p><%= book.title%></p>
+
+          <a href="/books/<%= book.id%>">
+            <button type="button" class="btn btn-success">View More</button>
+          </a>
+          <a href="/books/<%= book.id%>/delete">
+            <button type="button" class="btn btn-info">Delete</button>
+          </a>
+        </div>
+        <%})%>
+      </section>
+    </main>
+  </body>
+</html>
